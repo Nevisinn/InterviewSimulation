@@ -1,0 +1,6 @@
+﻿services:
+  interviewsimulation.web:
+    image: interviewsimulation.web
+    build:
+      context: .
+      dockerfile: InterviewSimulation.Web/Dockerfile
