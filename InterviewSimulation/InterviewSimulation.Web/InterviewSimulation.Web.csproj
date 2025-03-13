@@ -19,11 +19,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\InterviewSimulation.Core\InterviewSimulation.Core.csproj" />
+      <ProjectReference Include="..\InterviewSimulation.Infrastructure\InterviewSimulation.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
