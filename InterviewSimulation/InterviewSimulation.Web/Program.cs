@@ -1,6 +1,8 @@
 using InterviewSimulation.Core.Interfaces;
 using InterviewSimulation.Infrastructure.Services;
 using InterviewSimulation.Web.Controllers;
+using InterviewSimulation.Core.Models.Interfaces;
+using InterviewSimulation.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader();
     });
 });
+builder.Services.AddScoped<IVacancyAnalyzer, HhVacancyAnalyzer>();
 
 var app = builder.Build();
 
@@ -33,6 +36,9 @@ app.UseWebSockets();
 app.MapControllers();
 app.UseRouting();
 
+app.UseWebSockets();
+app.UseRouting();
+app.MapControllers();
 app.UseHttpsRedirection();
 
 app.Run();
