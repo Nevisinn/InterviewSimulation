@@ -10,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAiChat, YandexGptApi>();
+builder.Services.AddScoped<ISpeechRecognizer, YandexSpeechRecognizer>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -35,3 +36,5 @@ app.UseRouting();
 app.UseHttpsRedirection();
 
 app.Run();
+
+

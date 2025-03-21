@@ -11,4 +11,19 @@
       <ProjectReference Include="..\InterviewSimulation.Core\InterviewSimulation.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FFMpegCore" Version="5.2.0" />
+      <PackageReference Include="Grpc.Net.Client" Version="2.70.0-pre1" />
+      <PackageReference Include="Grpc.Tools" Version="2.71.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Http.Features">
+        <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.7\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
