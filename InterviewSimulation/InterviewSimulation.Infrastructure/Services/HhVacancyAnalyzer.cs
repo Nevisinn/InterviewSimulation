@@ -1,7 +1,7 @@
 using System.Net.Http.Json;
+using InterviewSimulation.Core.Interfaces;
 using InterviewSimulation.Core.Models.DTO;
 using InterviewSimulation.Core.Models.Entities;
-using InterviewSimulation.Core.Models.Interfaces;
 
 namespace InterviewSimulation.Infrastructure.Services;
 

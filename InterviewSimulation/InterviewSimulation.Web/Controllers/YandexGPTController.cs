@@ -1,6 +1,7 @@
 using InterviewSimulation.Core.Interfaces;
 using InterviewSimulation.Core.Models;
 using InterviewSimulation.Core.Models.Entities;
+using InterviewSimulation.Core.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InterviewSimulation.Web.Controllers;
@@ -16,15 +17,11 @@ public class YandexGptController : ControllerBase
         this.aiChat = aiChat;
     }
     
-    [HttpPost]
+    /*[HttpPost]
     public async Task<ActionResult<ChatResponse>> TestYandexGPT(string message)
     {
-        var userChatMessage = new ChatMessage
-        {
-            Role = MessageSenderRoles.User.ToString().ToLower(),
-            Text = message
-        };
-        var response = await aiChat.CommunicateWithAi(userChatMessage, null);
+        var userChatMessage = new ChatMessage(MessageSenderRoles.User.ToString().ToLower(), message);
+        var response = await aiChat.CommunicateWithAi();
         return Ok(response.Result.Alternatives[0].Message);
-    }
+    }*/
 }

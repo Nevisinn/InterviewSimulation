@@ -1,7 +1,7 @@
 using InterviewSimulation.Core.Interfaces;
 using InterviewSimulation.Core.Models;
 
-namespace InterviewSimulation.Infrastucture.Services;
+namespace InterviewSimulation.Infrastructure.Services;
 
 public class YandexSpeechRecognizer : ISpeechRecognizer
 {

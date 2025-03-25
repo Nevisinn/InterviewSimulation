@@ -1,4 +1,4 @@
-namespace InterviewSimulation.Core.Models;
+namespace InterviewSimulation.Core.Models.Enums;
 
 public enum MessageSenderRoles
 {

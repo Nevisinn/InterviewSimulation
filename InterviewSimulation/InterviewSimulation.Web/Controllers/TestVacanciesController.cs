@@ -1,5 +1,5 @@
+using InterviewSimulation.Core.Interfaces;
 using InterviewSimulation.Core.Models.DTO;
-using InterviewSimulation.Core.Models.Interfaces;
 using InterviewSimulation.Infrastructure.Services;
 using InterviewSimulation.Web.Filters;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -9,11 +9,11 @@ namespace InterviewSimulation.Web.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class VacanciesController : ControllerBase
+public class TestVacanciesController : ControllerBase
 {
     private IVacancyAnalyzer vacancyAnalyzer;
 
-    public VacanciesController(IVacancyAnalyzer vacancyAnalyzer)
+    public TestVacanciesController(IVacancyAnalyzer vacancyAnalyzer)
     {
         this.vacancyAnalyzer = vacancyAnalyzer;
     }

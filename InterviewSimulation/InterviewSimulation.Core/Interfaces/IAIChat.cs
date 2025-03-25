@@ -5,5 +5,5 @@ namespace InterviewSimulation.Core.Interfaces;
 
 public interface IAiChat
 {
-    public Task<ChatResponse> CommunicateWithAi(ChatMessage userMessage, ChatMessage? adminMessage);
+    public Task<ChatResponse> CommunicateWithAi(List<ChatMessage> context);
 }

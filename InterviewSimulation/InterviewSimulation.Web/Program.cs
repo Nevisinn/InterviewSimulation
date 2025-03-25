@@ -1,7 +1,7 @@
 using InterviewSimulation.Core.Interfaces;
+using InterviewSimulation.Core.Services;
 using InterviewSimulation.Infrastructure.Services;
 using InterviewSimulation.Web.Controllers;
-using InterviewSimulation.Core.Models.Interfaces;
 using InterviewSimulation.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAiChat, YandexGptApi>();
 builder.Services.AddScoped<ISpeechRecognizer, YandexSpeechRecognizer>();
+builder.Services.AddScoped<IInterviewHandler, InterviewService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>

@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using InterviewSimulation.Core.Models.Entities;
 
 namespace InterviewSimulation.Core.Models;
 
@@ -10,5 +11,5 @@ public class ChatRequest
     [JsonPropertyName("completionOptions")]
     public ChatOptions ChatOptions { get; set; }
     [JsonPropertyName("messages")]
-    public List<ChatMessage> Messages { get; set; }
+    public List<ChatMessage?> Messages { get; set; }
 }

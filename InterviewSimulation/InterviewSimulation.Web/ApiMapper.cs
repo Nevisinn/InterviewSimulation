@@ -26,5 +26,13 @@ public static class ApiMapper
         ProfessionalRoles = vacancy.ProfessionalRoles.Select(r=>r.Name).ToList()
     };
 
+    public static string Map(ChatResponse response)
+    {
+        var chatResponseMap = response.Result.Alternatives.FirstOrDefault()?.Message.Text;
+        return chatResponseMap ?? "Нет сообщений";
+    }
 
+    public static UserAnswer Map(RecognizeSpeechResponse response) => new(response.Text);
+    
+    
 }

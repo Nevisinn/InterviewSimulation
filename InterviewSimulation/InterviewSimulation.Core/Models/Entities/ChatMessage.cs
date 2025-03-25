@@ -1,9 +1,14 @@
 using System.Text.Json.Serialization;
 
-namespace InterviewSimulation.Core.Models;
+namespace InterviewSimulation.Core.Models.Entities;
 
-public class ChatMessage
+public abstract class ChatMessage
 {
+    protected ChatMessage(string text)
+    {
+        Text = text;
+    }
+
     [JsonPropertyName("role")]
     public string Role { get; set; }
     [JsonPropertyName("text")]

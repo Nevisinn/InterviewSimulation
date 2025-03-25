@@ -9,23 +9,21 @@ namespace InterviewSimulation.Infrastructure.Services;
 
 public class YandexGptApi : IAiChat
 {
-    private static HttpClient httpClient = new();
+    private static readonly HttpClient httpClient = new();
     private const string completion = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion";
     private readonly string modelUri = $"gpt://{EnvironmentVars.YandexCatalogId}/yandexgpt/rc";
+    private ChatOptions chatOptions = new();
     
-    public async Task<ChatResponse> CommunicateWithAi(ChatMessage userMessage, ChatMessage? adminMessage)
+    public async Task<ChatResponse> CommunicateWithAi(List<ChatMessage> context)
     {
         using HttpRequestMessage httpRequestMessage = new(HttpMethod.Post, completion);
 
         var request = new ChatRequest
         {
             ModelUri = modelUri,
-            ChatOptions = new ChatOptions(),
-            Messages = [userMessage]
+            ChatOptions = chatOptions,
+            Messages = context!
         };
-        
-        if (adminMessage is not null)
-            request.Messages.Add(adminMessage);
 
         var json = JsonSerializer.Serialize(request);
         var content = new StringContent(json, Encoding.UTF8, "application/json");

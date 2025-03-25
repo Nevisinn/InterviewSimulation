@@ -7,11 +7,11 @@ namespace InterviewSimulation.Web.Controllers;
 
 [Route("api/speech-to-text")]
 [ApiController]
-public class SpeechRecognizerController : ControllerBase
+public class TestSpeechRecognizerController : ControllerBase
 {
     private ISpeechRecognizer speechRecognizer;
 
-    public SpeechRecognizerController(ISpeechRecognizer speechRecognizer)
+    public TestSpeechRecognizerController(ISpeechRecognizer speechRecognizer)
     {
         this.speechRecognizer = speechRecognizer;
     }

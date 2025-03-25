@@ -1,7 +1,7 @@
 using InterviewSimulation.Core.Models.DTO;
 using InterviewSimulation.Core.Models.Entities;
 
-namespace InterviewSimulation.Core.Models.Interfaces;
+namespace InterviewSimulation.Core.Interfaces;
 
 public interface IVacancyAnalyzer
 {
