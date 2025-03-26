@@ -1,3 +1,4 @@
+using System.Text.Json;
 using InterviewSimulation.Core.Interfaces;
 using InterviewSimulation.Core.Models;
 using InterviewSimulation.Core.Models.DTO;
@@ -54,8 +55,17 @@ public class InterviewService : IInterviewHandler
         return response;
     }
 
-    public void FinishInterview()
+    public async Task<InterviewReport> FinishInterview()
     {
-        throw new NotImplementedException();
+        var reportPrompt = new InterviewReportPrompt();
+        var systemMessage = new SystemChatMessage(reportPrompt.Text);
+        var userMessage = new UserChatMessage("Проведи анализ ответов");
+        interview.Context.Add(systemMessage);
+        interview.Context.Add(userMessage);
+        var response = await aiChat.CommunicateWithAi(interview.Context);
+        var aiChatMessage = response.Result.Alternatives.FirstOrDefault()?.Message.Text;
+        var interviewRepost = JsonSerializer.Deserialize<InterviewReport>(aiChatMessage);
+        interview.Status = InterviewStatus.Done;
+        return interviewRepost;
     }
 }

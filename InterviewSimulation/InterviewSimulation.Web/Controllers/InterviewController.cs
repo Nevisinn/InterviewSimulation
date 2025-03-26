@@ -1,10 +1,11 @@
 using InterviewSimulation.Core.Interfaces;
+using InterviewSimulation.Core.Models.Entities;
 using InterviewSimulation.Web.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InterviewSimulation.Web.Controllers;
 
-[Route("/api[controller]")]
+[Route("api/[controller]")]
 [Controller]
 public class InterviewController : ControllerBase
 {
@@ -50,9 +51,9 @@ public class InterviewController : ControllerBase
     }
     
     [HttpPost("/FinishInterview")]
-    public async Task<ActionResult<string>> FinishInterview()
+    public async Task<ActionResult<InterviewReport>> FinishInterview()
     {
-        throw new NotImplementedException();
+        var interviewReport = await interviewService.FinishInterview();
+        return Ok(interviewReport);
     }
-    
 }

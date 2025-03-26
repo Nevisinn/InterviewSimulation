@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InterviewSimulation.Web.Controllers;
 
-[Route("api/speech-to-text")]
+[Route("api/[controller]")]
 [ApiController]
 public class TestSpeechRecognizerController : ControllerBase
 {

@@ -2,7 +2,7 @@ using FFMpegCore;
 using FFMpegCore.Pipes;
 using Microsoft.AspNetCore.Http;
 
-namespace InterviewSimulation.Infrastucture.Services;
+namespace InterviewSimulation.Infrastructure.Services;
 
 public class AudioConverterService
 {
